@@ -13,7 +13,11 @@ credentials = Credentials.from_service_account_file(
 )
 
 gc = gspread.authorize(credentials)
+
 worksheet = gc.open('PIV_miguel_gut_seara').sheet1
 
-lists = worksheet.get_all_values();
-print(lists)
+#lists = worksheet.get_all_values();
+#print(lists)
+
+list_of_dicts = worksheet.get_all_records()
+print(list_of_dicts)
